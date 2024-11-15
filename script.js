@@ -17,7 +17,7 @@ function displayBooks() {
         const divContainer = document.querySelector("#container");
         const bookContainer = document.createElement("div");
         const bookName = document.createElement("p");
-        
+
         bookContainer.appendChild(bookName);
         divContainer.appendChild(bookContainer);
 
@@ -25,8 +25,8 @@ function displayBooks() {
     })
 }
 
-addBookToLibrary("Aiu", "Ngano Poor", 69, true);
-addBookToLibrary("Irine", "Gwapa", 69, true);
-addBookToLibrary("test", "tester", 69, true);
-addBookToLibrary("gwa", "po", 69, true);
-displayBooks();
+// addBookToLibrary("Aiu", "Ngano Poor", 69, true);
+// addBookToLibrary("Irine", "Gwapa", 69, true);
+// addBookToLibrary("test", "tester", 69, true);
+// addBookToLibrary("gwa", "po", 69, true);
+// displayBooks();
