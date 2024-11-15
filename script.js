@@ -12,7 +12,21 @@ function addBookToLibrary(author, title, pages, readStatus) {
     myLibrary.push(book);
 }
 
-addBookToLibrary("Aiu", "Pogi", 2, true);
-addBookToLibrary("Irine", "Gwapa", 2, true);
+function displayBooks() {
+    myLibrary.forEach(function(book) {
+        const divContainer = document.querySelector("#container");
+        const bookContainer = document.createElement("div");
+        const bookName = document.createElement("p");
+        
+        bookContainer.appendChild(bookName);
+        divContainer.appendChild(bookContainer);
 
-console.log(myLibrary);
+        bookName.textContent = book.author;
+    })
+}
+
+addBookToLibrary("Aiu", "Ngano Poor", 69, true);
+addBookToLibrary("Irine", "Gwapa", 69, true);
+addBookToLibrary("test", "tester", 69, true);
+addBookToLibrary("gwa", "po", 69, true);
+displayBooks();
