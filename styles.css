@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --main-color: #40534C;
+    --secondary-color: #1A3636;
+    --font-color: #D6BD98;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: var(--font-color);
+}
+
+#header {
+    height: 15vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px gainsboro;
+}
+
+h1 {
+    font-style: oblique;
+}
+
+#container {
+    background-color: var(--main-color);
+    height: 85vh;
+}
