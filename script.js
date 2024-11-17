@@ -15,18 +15,43 @@ function addBookToLibrary(author, title, pages, readStatus) {
 function displayBooks() {
     myLibrary.forEach(function(book) {
         const divContainer = document.querySelector("#container");
-        const bookContainer = document.createElement("div");
-        const bookName = document.createElement("p");
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        const titleElement = document.createElement("div");
+        titleElement.classList.add("title");
+        const authorElement = document.createElement("div");
+        authorElement.classList.add("author");
+        const pagesElement = document.createElement("div");
+        pagesElement.classList.add("pages")
+        const readDivElement = document.createElement("div");
+        readDivElement.classList.add("read");
+        const readBtnElement = document.createElement("button");
+        readBtnElement.classList.add("read-status");
+        const deleteDivElement = document.createElement("div");
+        deleteDivElement.classList.add("delete");
+        const deleteBtnElement = document.createElement("button");
+        deleteBtnElement.classList.add("delete-btn") //create elements and add their classes
 
-        bookContainer.appendChild(bookName);
-        divContainer.appendChild(bookContainer);
+        divContainer.appendChild(cardElement);
+        cardElement.appendChild(titleElement);
+        cardElement.appendChild(authorElement);
+        cardElement.appendChild(pagesElement);
+        cardElement.appendChild(readDivElement);
+        readDivElement.appendChild(readBtnElement);
+        cardElement.appendChild(deleteDivElement);
+        deleteDivElement.appendChild(deleteBtnElement); //add elements to dom;
 
-        bookName.textContent = book.author;
+        titleElement.textContent = book.title;
+        authorElement.textContent = `by ${book.author}`;
+        pagesElement.textContent = `${book.pages} pages`;
+        readBtnElement.textContent = book.readStatus ? "Read" : "Not Read";
+        deleteBtnElement.textContent = "Remove"; //add contents to the elements 
     })
 }
 
-// addBookToLibrary("Aiu", "Ngano Poor", 69, true);
-// addBookToLibrary("Irine", "Gwapa", 69, true);
-// addBookToLibrary("test", "tester", 69, true);
-// addBookToLibrary("gwa", "po", 69, true);
-// displayBooks();
+addBookToLibrary("Aiu", "Ngano Poor", 69, true);
+addBookToLibrary("Irine", "Gwapa", 69, false);
+addBookToLibrary("test", "tester", 69, false);
+addBookToLibrary("gwa", "po", 69, true);
+
+displayBooks();
