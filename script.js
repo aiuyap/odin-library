@@ -46,6 +46,21 @@ function displayBooks() {
         pagesElement.textContent = `${book.pages} pages`;
         readBtnElement.textContent = book.readStatus ? "Read" : "Not Read";
         deleteBtnElement.textContent = "Remove"; //add contents to the elements 
+
+        //added event listeners to modify read status and remove button
+        readBtnElement.addEventListener("click", () => {
+            if(book.readStatus) {
+                book.readStatus = false;
+                readBtnElement.textContent = "Not Read";
+            } else {
+                book.readStatus = true;
+                readBtnElement.textContent = "Read";
+            }
+        });
+
+        deleteBtnElement.addEventListener("click", () => {
+            cardElement.remove();
+        });
     })
 }
 
