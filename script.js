@@ -13,7 +13,7 @@ function addBookToLibrary(author, title, pages, readStatus) {
 }
 
 function displayBooks() {
-    myLibrary.forEach(function(book) {
+    myLibrary.forEach(function(book, index) {
         const divContainer = document.querySelector("#container");
         const cardElement = document.createElement("div");
         cardElement.classList.add("card");
@@ -60,6 +60,7 @@ function displayBooks() {
 
         deleteBtnElement.addEventListener("click", () => {
             cardElement.remove();
+            book.splice(index, 1);
         });
     })
 }
