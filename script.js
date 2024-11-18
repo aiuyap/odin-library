@@ -12,6 +12,11 @@ function addBookToLibrary(author, title, pages, readStatus) {
     myLibrary.push(book);
 }
 
+const addBookBtn = document.querySelector("#add-newbook-btn");
+addBookBtn.addEventListener("click", () => {
+    const dialog = document.querySelector("dialog").open = true;
+});
+
 function displayBooks() {
     myLibrary.forEach(function(book, index) {
         const divContainer = document.querySelector("#container");
