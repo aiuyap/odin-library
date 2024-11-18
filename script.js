@@ -60,7 +60,7 @@ function displayBooks() {
 
         deleteBtnElement.addEventListener("click", () => {
             cardElement.remove();
-            book.splice(index, 1);
+            myLibrary.splice(index, 1);
         });
     })
 }
@@ -101,9 +101,9 @@ const addBook = document.querySelector("form").addEventListener("submit", (event
     clearFields();
 });
 
-addBookToLibrary("Aiu", "Ngano Poor", 69, true);
-addBookToLibrary("Irine", "Gwapa", 69, false);
-addBookToLibrary("test", "tester", 69, false);
-addBookToLibrary("gwa", "po", 69, true);
+addBookToLibrary("Charles Dickens", "A Tale Of Two Cities", 440, false);
+addBookToLibrary("Antoine de Saint-Exupéry", "The Little Prince (Le Petit Prince)", 96, true);
+addBookToLibrary("Paulo Coelho", "The Alchemist (O Alquimista)", 208, false);
+addBookToLibrary("J. K. Rowling", "Harry Potter and the Philosopher's Stone", 	309, true);
 
 displayBooks();
