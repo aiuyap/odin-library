@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+ } /* remove arrow in input type number */
+
 :root {
     --main-color: #677D6A;
     --secondary-color: #40534C;
@@ -106,20 +112,17 @@ dialog button {
 }
 
 dialog {
-    height: 500px;
+    height: 400px;
     width: 400px;
     justify-self: center;
     background-color: var(--main-color);
     text-align: center;
+    padding: 1rem;
+    border-radius: 15px;
 }
 
-#dialog-container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.61);
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.623);
 }
 
 form {
@@ -128,13 +131,29 @@ form {
     height: 300px;
     align-items: start;
     justify-content: center;
+    padding-top: 1rem;
 }
 
-h3 {
+form label {
     align-self: end;
+    font-weight: 700;
+    text-shadow: 1px 1px var(--tertiary-color);
 }
 
 dialog button {
     background-color: var(--tertiary-color);
     justify-self: center;
+}
+
+dialog button:hover {
+    background-color: var(--main-color);
+    border: 1px solid var(--tertiary-color);
+}
+
+input[type="text"], 
+input[type="number"] {
+    padding: 5px 10px;
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+    border: none;
 }

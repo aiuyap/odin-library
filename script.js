@@ -12,11 +12,6 @@ function addBookToLibrary(author, title, pages, readStatus) {
     myLibrary.push(book);
 }
 
-const addBookBtn = document.querySelector("#add-newbook-btn");
-addBookBtn.addEventListener("click", () => {
-    const dialog = document.querySelector("dialog").open = true;
-});
-
 function displayBooks() {
     myLibrary.forEach(function(book, index) {
         const divContainer = document.querySelector("#container");
@@ -27,7 +22,7 @@ function displayBooks() {
         const authorElement = document.createElement("div");
         authorElement.classList.add("author");
         const pagesElement = document.createElement("div");
-        pagesElement.classList.add("pages")
+        pagesElement.classList.add("pages");
         const readDivElement = document.createElement("div");
         readDivElement.classList.add("read");
         const readBtnElement = document.createElement("button");
@@ -69,6 +64,42 @@ function displayBooks() {
         });
     })
 }
+
+function clearFields () {
+    const allInputs = document.querySelectorAll("input");
+    allInputs.forEach(x => {
+        x.value = "";
+        x.checked = false;
+    });
+}
+
+function clearCards () {
+    const allCards = document.querySelectorAll(".card");
+    allCards.forEach(x => {
+        x.remove();
+    });
+}
+
+const addBookBtn = document.querySelector("#add-newbook-btn").addEventListener("click", () => {
+    document.querySelector("dialog").showModal();
+});
+
+const closeAddBookBtn = document.querySelector("#dialog-close").addEventListener("click", () => {
+    document.querySelector("dialog").close();
+    clearFields();
+});
+
+const addBook = document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const title = document.querySelector("#new-title").value;
+    const author = document.querySelector("#new-author").value;
+    const pages = parseInt(document.querySelector("#new-pages").value);
+    const readStatus = document.querySelector("#new-read").checked;
+    addBookToLibrary(author, title, pages, readStatus);
+    clearCards();
+    displayBooks();
+    clearFields();
+});
 
 addBookToLibrary("Aiu", "Ngano Poor", 69, true);
 addBookToLibrary("Irine", "Gwapa", 69, false);

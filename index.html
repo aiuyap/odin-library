@@ -12,38 +12,22 @@
         <h1>The Library</h1>
         <button id="add-newbook-btn">Add New Book +</button>
     </div>
-    <div id="dialog-container">
-        <dialog open>
-            <h1>Add New Book</h1>
-            <form method="dialog">
-                <h3>Title</h3>
-                <input type="text">
-                <h3>Author</h3>
-                <input type="text">
-                <h3>Pages</h3>
-                <input type="text">
-                <h3>Read?</h3>
-                <input type="checkbox">
-                <button type="submit">Add</button>
-                <button type="submit">Close</button>
-            </form>
-        </dialog>
-    </div>
+    <dialog>
+        <h1>Add New Book</h1>
+        <form method="dialog">
+            <label for="new-title">Title</label>
+            <input type="text" name="title" id="new-title" required>
+            <label for="new-author">Author</label>
+            <input type="text" name="author" id="new-author" required>
+            <label for="new-pages">Pages</label>
+            <input type="number" name="pages" id="new-pages" required>
+            <label for="new-read">Read?</label>
+            <input type="checkbox" name="read" id="new-read">
+            <button type="submit" id="add-btn">Add</button>
+            <button type="button" id="dialog-close">Close</button>
+        </form>
+    </dialog>
     <div id="container">
-        <div class="card">
-            <div class="title">Harry Potter and the Prisoner of Azkaban</div>
-            <div class="author">by Irine Marie Monteclar</div>
-            <div class="pages">69 pages</div>
-            <div class="read"><button class="read-status">Not Read</button></div>
-            <div class="delete"><button class="delete-btn">Remove</button></div>
-        </div>
-        <div class="card">
-            <div class="title">Pogi</div>
-            <div class="author">by Aiu Yap</div>
-            <div class="pages">69 pages</div>
-            <div class="read"><button class="read-status">Not Read</button></div>
-            <div class="delete"><button class="delete-btn">Remove</button></div>
-        </div>
     </div>
 </body>
 </html>
